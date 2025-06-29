@@ -39,6 +39,24 @@
     quick-tap-ms = <0>;
 };
 
+&trackball {
+    automouse-layer = <4>;
+    scroll-layers = <5>;
+
+    // arrows {
+    //     layers = <3>;
+    //     bindings =
+    //         <&kp RIGHT_ARROW>,
+    //         <&kp LEFT_ARROW>,
+    //         <&kp UP_ARROW>,
+    //         <&kp DOWN_ARROW>;
+
+    //     tick = <10>;
+    //     wait-ms = <5>;
+    //     tap-ms = <5>;
+    // };
+};
+
 / {
     combos { compatible = "zmk,combos"; };
 
@@ -180,14 +198,6 @@
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-            tap-ms = <20>;
-        };
     };
 
     keymap {
@@ -224,7 +234,7 @@ bindings = <
 &mt LCTL ESC  &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN  &kp BACKSPACE  &kp ENTER   &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         layer_2 {
@@ -241,7 +251,7 @@ bindings = <
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN   &kp BACKSPACE  &kp ENTER                   &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>, <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         layer_3 {
@@ -258,7 +268,7 @@ bindings = <
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN  &kp BACKSPACE  &kp ENTER  &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+           sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         layer_4 {
@@ -275,7 +285,7 @@ bindings = <
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN     &kp BACKSPACE  &kp ENTER             &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>, <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         SCROLL {
@@ -292,10 +302,10 @@ bindings = <
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN     &kp BACKSPACE  &kp ENTER   &kp DEL
             >;
 
-           sensor-bindings = <&scroll_up_down>, <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+          sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-      MOUSE {
+      layer_6 {
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |                     |     |     |     |     |      |
 // |      |     |     |     |     |     |           |    |     |     |     |     |      |
@@ -309,7 +319,7 @@ bindings = <
 &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &trans
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN     &kp BACKSPACE  &kp ENTER   &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down>, <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+           sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
     };
 };
