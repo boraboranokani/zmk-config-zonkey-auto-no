@@ -39,11 +39,11 @@
     quick-tap-ms = <0>;
 };
 &trackball {
-    automouse-layer = <4>;
     scroll-layers = <5>;
+    automouse-layer = <6>;
 
     // arrows {
-    //     layers = <3>;
+    //     layers = <2>;
     //     bindings =
     //         <&kp RIGHT_ARROW>,
     //         <&kp LEFT_ARROW>,
@@ -246,7 +246,7 @@ bindings = <
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_2 {
+        ARROW_2 {
 // -----------------------------------------------------------------------------------------
 // |  1  |  2  |  3  |  4  |  5  |                     |  6  |  7  |  8  |  9  |   0  |
 // |      |     |     |     |     |     |           |    |     |     |     |  ↑  |      |
@@ -314,7 +314,7 @@ bindings = <
             sensor-bindings = <&scroll_up_down>;
         };
 
-      layer_6 {
+      MOUSE {
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |                     |     |     |     |     |      |
 // |      |     |     |     |     |     |           |    |     |     |     |     |      |
