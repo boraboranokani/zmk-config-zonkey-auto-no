@@ -38,12 +38,13 @@
     flavor = "balanced";
     quick-tap-ms = <0>;
 };
+
 &trackball {
     scroll-layers = <5>;
     automouse-layer = <6>;
 
     // arrows {
-    //     layers = <2>;
+    //     layers = <4>;
     //     bindings =
     //         <&kp RIGHT_ARROW>,
     //         <&kp LEFT_ARROW>,
