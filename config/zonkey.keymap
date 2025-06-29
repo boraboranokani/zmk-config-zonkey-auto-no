@@ -51,16 +51,14 @@
         };
     };
 
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
+   behaviors {
+        drag_scroll: drag_scroll {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
+            label = "DRAG_SCROLL";
+            bindings = <&mkp BTN1>, <&mo MOUSE>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
         };
-
         mo2: mo2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -181,12 +179,18 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        scroll_up_down: scroll_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
             tap-ms = <20>;
+        };
+
+        move_scroll_toggle: move_scroll_toggle {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "TOGGLE_SCROLL_MODE";
+            #binding-cells = <0>;
+            bindings = <&layer_toggle SCROLL>;
         };
     };
 
@@ -297,7 +301,7 @@ bindings = <
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-      layer_6 {
+      MOUSE {
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |                     |     |     |     |     |      |
 // |      |     |     |     |     |     |           |    |     |     |     |     |      |
